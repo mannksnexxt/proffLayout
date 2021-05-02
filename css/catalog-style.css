@@ -179,6 +179,7 @@ details > summary {
     font-weight: 200;
     text-decoration: none;
 }
+
 .pagination a.active {
     color: #F16D7F;
 }
