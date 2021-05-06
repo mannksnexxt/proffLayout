@@ -1,0 +1,112 @@
+$mainColor: #F16D7F;
+$borderColor: #EAEAEA;
+
+@mixin flex($content: center, $direction: row) {
+    display: flex;
+    justify-content: $content;
+    flex-direction: $direction;
+    align-items: center;
+}
+@mixin font($size: 16px, $color: $mainColor, $weight: 400) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
+
+.slider {
+    @include flex(space-between);
+    background: #F7F7F7;
+    &__control {
+        padding: 12px 17px;
+        border: none;
+        background: rgba(42, 42, 42, 0.15);
+        cursor: pointer;
+        &:hover svg path {
+            fill: $mainColor;
+        }
+    }
+}
+
+.product {
+    @include flex(space-between, column);
+    border: 1px solid $borderColor;
+    transform: translateZ(20px) translateY(-64px);
+    background: #fff;
+    padding: 64px 0;
+    margin-bottom: 64px;
+    &--collection {
+        @include font(14px, $mainColor);
+        margin: 0;
+        position: relative;
+        &::after {
+            content: '';
+            width: 64px;
+            height: 4px;
+            background: $mainColor;
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            transform: translate(-50%, 0%);
+        }
+    }
+    &--name {
+        @include font(18px, #4D4D4D, 300);
+        margin: 28px 0 48px 1px;
+    }
+    &--description {
+        @include font(14px, #5E5E5E, 300);
+        max-width: 555px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    &--price {
+        @include font(24px, $mainColor, 300);
+        margin-bottom: 64px;
+    }
+    &--parameters {
+        display: flex;
+        margin-bottom: 49px;
+    }
+    &--button {
+        @include flex;
+        padding: 14px 32px;
+        background-color: transparent;
+        border: 1px solid $mainColor;
+        cursor: pointer;
+        &:hover {
+            background: $mainColor;
+            span {color: #fff;}
+            svg path {fill: #fff;}
+        }
+        span {
+            @include font;
+            margin-left: 11px;
+        }
+    }
+    hr {
+        max-width: 640px;
+        width: 100%;
+        height: 1px;
+        background: $borderColor;
+        border: none;
+        margin-bottom: 64px;
+    }
+}
+
+.parameter {
+    &:not(:last-child) {
+        margin-left: 23px;
+    }
+    &--caption {
+        @include font(14px, #6F6E6E, 400);
+        @include flex;
+    }
+    img {
+        margin-left: 10px;
+    }
+}
+
+.more-products {
+    margin-bottom: 128px;
+}

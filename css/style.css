@@ -331,6 +331,7 @@ a {
     border-radius: 0 20px 20px 0;
     transition: .1s;
     cursor: pointer;
+    color: #fff;
 }
 .button:hover {background: #E05C6E;}
 
@@ -413,7 +414,6 @@ a {
 .main-header {
     padding: 60px 0;
     background-color: #F8F3F4;
-    margin-bottom: 50px;
 }
 
 .main__container {
@@ -427,4 +427,14 @@ a {
     font-size: 24px;
     margin: 0;
     font-weight: normal;
+}
+
+.breadcrumb span {
+    color: #636363;
+    font-weight: 300;
+    font-size: 14px;
+}
+.breadcrumb span.active {
+    color: #F16D7F;
+    font-weight: 700;
 }

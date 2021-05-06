@@ -1,17 +1,6 @@
 
-.breadcrumb span {
-    color: #636363;
-    font-weight: 300;
-    font-size: 14px;
-}
-.breadcrumb span.active {
-    color: #F16D7F;
-    font-weight: 700;
-}
-
-
-
 .filters {
+    margin-top: 50px;
     margin-bottom: 62px;
     display: flex;
     justify-content: flex-start;
