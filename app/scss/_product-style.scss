@@ -1,17 +1,9 @@
+@import "mixins";
+
 $mainColor: #F16D7F;
 $borderColor: #EAEAEA;
 
-@mixin flex($content: center, $direction: row) {
-    display: flex;
-    justify-content: $content;
-    flex-direction: $direction;
-    align-items: center;
-}
-@mixin font($size: 16px, $color: $mainColor, $weight: 400) {
-    font-size: $size;
-    color: $color;
-    font-weight: $weight;
-}
+
 
 
 .slider {
@@ -27,6 +19,7 @@ $borderColor: #EAEAEA;
         }
     }
 }
+
 
 .product {
     @include flex(space-between, column);

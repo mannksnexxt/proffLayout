@@ -1,0 +1,23 @@
+@import "../mixins";
+
+.features__container {
+    @include flex(space-between);
+}
+.feature {
+    @include flex($direction: column);
+    max-width: 360px;
+    &__container {
+        background: #222224;
+        padding: 103px 0;
+    }
+    &-caption {
+        @include font(20px, #FBFBFB, 400);
+        margin-top: 28px;
+        margin-bottom: 16px;
+    }
+    &-annotation {
+        @include font(14px, #FBFBFB, 100);
+        text-align: center;
+        margin: 0;
+    }
+}
