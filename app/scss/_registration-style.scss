@@ -1,0 +1,115 @@
+@import "mixins";
+
+@keyframes swimming {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+$border: 1px solid #A4A4A4;
+$mainColor: #F16D7F;
+
+
+.reg {
+    &__container {
+        @include flex(space-between, row, flex-start);
+        gap: 128px;
+        padding: 64px 0 96px;
+    }
+    &__form {
+        @include flex(flex-start, column, stretch);
+        max-width: 360px;
+
+    }
+    &__loyal {
+        max-width: 650px;
+        h2 {
+            @include font(24px, #000, 300);
+            margin: 0;
+            &:hover {
+                transition: 1s;
+                transform: rotateX(360deg);
+            }
+        }
+        p {
+            @include font(24px, #000, 300);
+            margin: 22px 0;
+        }
+        ul {
+            @include flex(flex-start, column, flex-start);
+            gap: 16px;
+            padding-inline-start: 23px;
+            li {
+                @include font(24px, #000, 300);
+                list-style: '\2714';
+                padding-left: 23px;
+            }
+        }
+    }
+}
+
+.form {
+    &__caption {
+        @include font(16px, #222, 300);
+        margin: 0;
+    }
+    input {
+        @include font(13px, #222, 300);
+        border: $border;
+        background: transparent;
+        padding: 13px 17px;
+        outline: none;
+        margin-top: 20px;
+        &:focus {
+            &::placeholder {
+                color: #B1B1B1;
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    button {
+        @include font(14px, #fff, 300);
+        margin-top: 4px;
+        padding: 16px 29px;
+        align-self: flex-start;
+        background: $mainColor;
+        border: transparent;
+        i {
+            margin-left: 20px;
+        }
+        &:hover > i {
+            animation: 1s ease-in infinite swimming;
+        }
+    }
+    .radio {
+        @include flex(flex-start);
+        gap: 20px;
+        padding: 33px 0;
+        label {
+            @include flex;
+            input {
+                margin: 0;
+                margin-right: 10px;
+            }
+            span {
+                @include font(11px, #000, 300);
+            }
+            &:hover input {
+                transform: scale(1.2);
+            }
+        }
+    }
+    &__note {
+        @include font(13px, #B1B1B1, 300);
+        margin: 15px 0 39px;
+    }
+}
