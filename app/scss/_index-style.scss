@@ -42,6 +42,7 @@
         @each $id, $name in $names {
             &:nth-child(#{$id}) {
                 background: url('../img/#{$name}.png');
+                background-size: cover;
             }
         }
 
