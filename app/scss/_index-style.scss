@@ -5,9 +5,9 @@
     margin: 0 0 65px 0;
     &__container {
         @include flex(flex-end);
-        min-height: 768px;
+        min-height: calc(100vh - 78px);
         background: url('../img/man.png') no-repeat {
-            position: -230px bottom;
+            position: -230px 20px;
         }
     }
     &__text {

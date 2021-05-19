@@ -20,16 +20,54 @@
             </div>
             <div class="header__right">
                 <nav class="header__nav">
-                    <a href="#">
+                    <a href="#" class="header__menu-button">
                         <img src="img/menu.svg">
                     </a>
-                    <a href="#">
+                    <a href="html/registration.html">
                         <img src="img/user.svg">
                     </a>
                     <a href="html/cart.html">
                         <img src="img/cart.svg">
                     </a>
                 </nav>
+            </div>
+        </div>
+        <div class="right-menu">
+            <div class="right-menu__caption">
+                <button class="right-menu__close-button"><i class="fas fa-times"></i></button>
+                <h2>MENU</h2>
+            </div>
+            <div class="right-menu__section">
+                <h3>MAN</h3>
+                <ul>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Bags</a></li>
+                    <li><a href="#">Denim</a></li>
+                    <li><a href="#">T-Shirts</a></li>
+                </ul>
+            </div>
+
+            <div class="right-menu__section">
+                <h3>WOMAN</h3>
+                <ul>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Bags</a></li>
+                    <li><a href="#">Denim</a></li>
+                    <li><a href="#">T-Shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                </ul>
+            </div>
+
+            <div class="right-menu__section">
+                <h3>MAN</h3>
+                <ul>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Bags</a></li>
+                    <li><a href="#">Denim</a></li>
+                    <li><a href="#">T-Shirts</a></li>
+                    <li><a href="#">Shirts</a></li>
+                    <li><a href="#">Jackets & Coats</a></li>
+                </ul>
             </div>
         </div>
     </header>
@@ -286,3 +324,15 @@
 
 </body>
 </html>
+
+<script type="text/javascript">
+    const toggleMenu = () => {
+        let menu = document.querySelector('.right-menu');
+        menu.classList.toggle('right-menu--active');
+    }
+    let menuButton = document.querySelector('.header__menu-button');
+    menuButton.addEventListener('click', toggleMenu);
+    let closeButton = document.querySelector('.right-menu__close-button');
+    closeButton.addEventListener('click', toggleMenu);
+
+</script>

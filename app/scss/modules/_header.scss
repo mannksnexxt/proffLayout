@@ -1,8 +1,11 @@
 @import "../mixins";
 
+$mainColor: #F16D7F;
+
 .header {
     background-color: #222222;
     padding: 18px 0 19px 0;
+    position: relative;
     &__container {
         @include flex(space-between);
     }
@@ -15,6 +18,54 @@
     &__nav {
         a:not(:last-child) {
             margin: 0 33px 0 0;
+        }
+    }
+    .right-menu {
+        transform: translateX(100%);
+        min-width: 232px;
+        z-index: 3;
+        box-sizing: border-box;
+        position: absolute;
+        padding: 16px 16px 16px 34px;
+        background-color: #fff;
+        right: 0;
+        top: 78px;
+        min-height: calc(100vh - 78px);
+        &--active {
+            transform: translateX(0);
+        }
+        &__caption {
+            @include flex(center, column, flex-start);
+            button {
+                background: transparent;
+                padding: 0;
+                border: none;
+                align-self: flex-end;
+                color: #6F6E6E;
+            }
+            h2 {
+                @include font(14px, #000, 600);
+                margin: 9px 0 24px;
+            }
+        }
+        &__section {
+            margin-bottom: 20px;
+            h3 {
+                @include font(14px, $mainColor);
+                margin: 0;
+            }
+            ul {
+                margin: 0;
+                padding-inline-start: 20px;
+            }
+            li {
+                list-style-type: none;
+                margin-top: 12px;
+                a {
+                    @include font(14px, #6F6E6E);
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
