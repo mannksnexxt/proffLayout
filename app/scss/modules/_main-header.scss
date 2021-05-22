@@ -13,10 +13,11 @@
     }
 }
 .breadcrumb {
-    span {
+    a {
         @include font(14px, #636363, 300);
-        &.active {
-            @include font(14px, #F16D7F, 700);
-        }
+		text-decoration: none;
     }
+	span.active {
+		@include font(14px, #F16D7F, 700);
+	}
 }

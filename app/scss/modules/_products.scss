@@ -20,6 +20,7 @@
     &-caption {
         @include font(13px, #000);
         margin: 0 0 12px;
+		text-decoration: none;
     }
     &-description {
         @include font(14px, #5D5D5D, 300);
