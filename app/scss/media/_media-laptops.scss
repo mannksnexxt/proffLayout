@@ -1,0 +1,53 @@
+@import "../mixins";
+
+@media (max-width: 1160px) {
+    .shop {
+        &__items {
+            @include flex(space-evenly) {
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .filters {
+        margin-top: 24px;
+        margin-bottom: 40px;
+        justify-content: space-between;
+    }
+    // product laptops
+    .more-products {
+        .shop__item:last-child {
+            display: none;
+        }
+    }
+    .to-cart__button img {
+        max-width: 40px;
+    }
+    //cart laptops
+    .cart__container {
+        @include flex(center, column);
+        gap: 64px;
+        padding: 0 16px;
+        margin-bottom: 128px;
+    }
+    // reg laptops
+    .reg {
+        &__container {
+            padding: 40px 16px 96px;
+            gap: 25px;
+        }
+        &__loyal {
+            max-width: 360px;
+            h2 {
+                @include font(16px, #000, 300);
+            }
+            p {
+                @include font(16px, #000, 300);
+            }
+            ul {
+                li {
+                    @include font(16px, #000, 300);
+                }
+            }
+        }
+    }
+}

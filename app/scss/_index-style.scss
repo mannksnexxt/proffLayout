@@ -1,0 +1,90 @@
+@import "mixins";
+
+.promo {
+    background-color: #f1e4e6;
+    margin: 0 0 65px 0;
+    &__container {
+        @include flex(flex-end);
+        min-height: calc(100vh - 78px);
+        background: url('../img/man.png') no-repeat {
+            position: -230px 20px;
+        }
+    }
+    &__text {
+        max-width: 377px;
+        width: 50%;
+        margin-right: 90px;
+        border-left: 12px solid #f16d7f;
+        padding: 0 0 0 30px;
+        h1 {
+            @include font(48px, #222);
+            padding: 0;
+            margin: 0;
+        }
+        span {
+            @include font(32px, #222);
+            span {
+                color: #f16d7f;
+            }
+        }
+    }
+}
+.offer {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 96px;
+    }
+    &__card {
+        $names: (1: women, 2: men, 3: kids, 4: acces);
+        @each $id, $name in $names {
+            &:nth-child(#{$id}) {
+                background: url('../img/#{$name}.png');
+                background-size: cover;
+            }
+        }
+
+        &:not(:last-child) {
+            width: 30%;
+            min-height: 260px;
+        }
+        &:last-child {
+            width: 100%;
+            min-height: 180px;
+        }
+        &--wrap {
+            width: 100%;
+            height: 100%;
+            @include flex(center, column);
+            background-color: rgba(33, 22, 22, 0.7);
+        }
+        h2, span {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            @include font(24px, #F16D7F, 300);
+        }
+        span {
+            @include font(18px, #fff, 300);
+        }
+    }
+}
+.title {
+    @include font(30px, #222);
+    margin: 0;
+    text-align: center;
+}
+.subtitle {
+    @include font(14px, #9F9F9F);
+    margin-top: 6px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+.button__container {
+    @include flex;
+    margin-bottom: 95px;
+}

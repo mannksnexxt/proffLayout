@@ -1,0 +1,113 @@
+@import "../mixins";
+
+.footer {
+    &__top {
+        @include flex(space-between);
+        position: relative;
+        padding: 86px 0 126px;
+        &-container {
+            @include flex(space-between);
+        }
+        &::after {
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            opacity: 0.3;
+            z-index: -1;
+            background: {
+                image: url(../img/subscribeBG.png);
+                size: cover;
+            }
+        }
+    }
+    &__bottom {
+        background: #222224;
+        &-container {
+            @include flex(space-between);
+            padding: 24px 0;
+        }
+    }
+}
+.subscribe {
+    @include flex($direction: column);
+    min-width: 560px;
+    &-info {
+        @include flex($direction: column);
+        max-width: 360px;
+        &-text {
+            @include font(20px, #222224);
+            margin-top: 30px;
+            text-align: center;
+            i {
+                @include font(20px, #222224);
+            }
+        }
+    }
+    &-title {
+        @include font(24px, #222224);
+        margin-bottom: 0;
+    }
+    &-subtitle {
+        @include font(18px, #222224, 300);
+        margin: 10px 0 32px;
+    }
+}
+
+.input {
+    background-color: #E1E1E1;
+    border-radius: 20px 0 0 20px;
+    min-width: 250px;
+    color: #222224;
+    outline: none;
+    transition: .1s;
+    &-field {
+        display: flex;
+        input {
+            padding: 16px;
+            border: none;
+            font-size: 14px;
+        }
+    }
+    &:focus {
+        background: #E9E9E9;
+    }
+}
+
+.button {
+    background: #F16D7F;
+    border-radius: 0 20px 20px 0;
+    transition: .1s;
+    cursor: pointer;
+    color: #fff;
+    &:hover {
+        background: #E05C6E;
+    }
+}
+.social {
+    @include flex;
+    min-width: 32px;
+    min-height: 32px;
+    background-color: #fff;
+    transition: .1s;
+    i {
+        @include font(16px, #000);
+    }
+    &-networks {
+        display: flex;
+    }
+    &:not(:last-child) {
+        margin-right: 7px;
+    }
+    &:hover {
+        background-color: #F16D7F;
+        i {
+            color: #fff;
+        }
+    }
+}
+.copyright {
+    @include font(16px, #FBFBFB);
+}

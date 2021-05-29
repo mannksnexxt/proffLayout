@@ -1,0 +1,207 @@
+@import "../mixins";
+
+@media (max-width: 680px) {
+    .container {
+        max-width: 375px;
+    }
+    .header {
+        padding: 0;
+        &__nav {
+            width: 32px;
+            a:not(:nth-child(1)) {
+                display: none;
+            }
+            a:not(:last-child) {
+                margin: 0;
+            }
+        }
+    }
+    .header__container {
+        padding: 18px 16px;
+    }
+    .promo {
+        margin: 0 0 64px 0;
+        &__container {
+            background: none;
+        }
+        &__text {
+            max-width: 236px;
+            width: 100%;
+            h1 {
+                @include font(38px, #222, 900);
+            }
+            span {
+                @include font(20px, #222, 700);
+            }
+        }
+
+    }
+    .offer {
+        &__container {
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        &__card {
+            &:not(:last-child) {
+                width: 100%;
+                min-height: 248px;
+            }
+            &:last-child {
+                width: 100%;
+                min-height: 111px;
+            }
+            h2 {
+                font-weight: 700;
+            }
+        }
+    }
+    .subtitle {
+        margin-bottom: 64px;
+    }
+    .shop {
+        &__items {
+            margin-bottom: 41px;
+        }
+        &__item {
+            max-width: 355px;
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+    .button__container {
+        margin-bottom: 96px;
+    }
+    .features__container {
+        padding: 48px 0 81px;
+    }
+    .footer {
+        &__top {
+            padding: 64px 0 110px;
+            &-container {
+                gap: 59px;
+            }
+
+        }
+        &__bottom {
+            &-container {
+                @include flex(center, column-reverse) {
+                    gap: 40px;
+                }
+                padding: 43px 0 9px;
+            }
+        }
+    }
+    .subscribe {
+        max-width: 340px;
+        min-width: 100px;
+        &-subtitle {
+            @include font(14px, #222224, 300);
+            text-align: center;
+        }
+    }
+    .input {
+        min-width: 100px;
+    }
+
+    // catalog smartphones
+    .filters {
+        margin-bottom: 32px;
+    }
+    .filter-button {
+        padding: 0;
+        min-width: 30px;
+        span {display: none;}
+        svg {
+            width: 37px;
+            height: 25px;
+        }
+    }
+    .caption {
+        font-size: 12px;
+    }
+    #filter-menu:checked ~ .filter__box {
+        width: 360px;
+    }
+
+    //product smartphones
+    .slider__img {
+        max-width: calc(100% - 92px);
+    }
+    .product {
+        border-left: none;
+        border-right: none;
+        transform: none;
+        hr {
+            max-width: 174px;
+        }
+    }
+    //cart smartphones
+    .cart__items {margin-top: 39px;}
+    .cart__container {margin-bottom: 96px;}
+    .cart__item {
+        max-height: 188px;
+        width: 100%;
+        img {
+            max-width: 143px;
+        }
+        .description {
+            min-width: 214px;
+            &-caption {
+                margin-bottom: 25px;
+                span {
+                    @include font(16px, #222);
+                }
+            }
+            &-body {
+                span {
+                    font-size: 14px;
+                    margin-bottom: 4px;
+                    span:not(.price) {
+                        font-size: 14px;
+                    }
+                    input {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .cart__buttons {
+        margin-top: 0;
+    }
+    .cart-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+    .cart__order {
+        @include flex(center, column, stretch);
+        margin-top: 0;
+        form {
+            width: 100%;
+        }
+    }
+    //reg smartphones
+    .reg {
+        &__container {
+            flex-direction: column;
+            padding: 40px 9px 96px;
+            gap: 40px;
+        }
+        &__loyal {
+            max-width: 360px;
+            h2 {
+                @include font(16px, #000, 300);
+            }
+            p {
+                @include font(16px, #000, 300);
+            }
+            ul {
+                li {
+                    @include font(16px, #000, 300);
+                }
+            }
+        }
+    }
+}

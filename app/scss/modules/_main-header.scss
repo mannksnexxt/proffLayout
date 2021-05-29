@@ -1,0 +1,23 @@
+@import "../mixins";
+
+.main {
+    &-header {
+        padding: 60px 0;
+        background-color: #F8F3F4;
+    }
+    &__container {
+        @include flex(space-between);
+    }
+    &-title {
+        @include font(24px, #F16D7F);
+    }
+}
+.breadcrumb {
+    a {
+        @include font(14px, #636363, 300);
+		text-decoration: none;
+    }
+	span.active {
+		@include font(14px, #F16D7F, 700);
+	}
+}

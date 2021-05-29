@@ -1,0 +1,62 @@
+@import "../mixins";
+
+.shop {
+    &__items {
+        @include flex(space-between) {
+            flex-wrap: wrap;
+        }
+        gap: 30px;
+        margin-bottom: 48px;
+    }
+    &__item {
+        max-width: 360px;
+        background-color: #F8F8F8;
+    }
+}
+.item {
+    &__bottom {
+        padding: 25px 16px 20px;
+    }
+    &-caption {
+        @include font(13px, #000);
+        margin: 0 0 12px;
+		text-decoration: none;
+    }
+    &-description {
+        @include font(14px, #5D5D5D, 300);
+        margin-bottom: 18px;
+    }
+    &-price {
+        @include font(16px, #F16D7F);
+    }
+    &__top {
+        position: relative;
+        z-index: 0;
+        &:hover {
+            .button-wrap {
+                display: flex;
+            }
+        }
+    }
+}
+.button-wrap {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(58, 56, 56, 0.86);
+    justify-content: center;
+    align-items: center;
+}
+.to-cart__button {
+    @include flex;
+    padding: 11px 16px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    span {
+        @include font(14px, #fff);
+        margin-left: 11px;
+    }
+}
